@@ -1,5 +1,6 @@
 import "./style.css";
 import { LineaTicket } from "./model";
+import { calculaTicket } from "./motor";
 
 const productos: LineaTicket[] = [
   {
@@ -35,3 +36,10 @@ const productos: LineaTicket[] = [
     cantidad: 1,
   },
 ];
+
+try {
+  const ticket = calculaTicket(productos);
+  console.log("Ticket de compra:", ticket);
+} catch (error) {
+  console.error("Error al calcular el ticket:", error);
+}
